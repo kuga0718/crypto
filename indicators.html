@@ -169,39 +169,77 @@
   </svg>
 
   <div class="container">
-    <header class="border-bottom lh-1 py-3">
+    <header class="">
       <div class="row flex-nowrap justify-content-between align-items-center">
         <div class="col text-center my-3">
-          <a class="blog-header-logo text-body-emphasis text-decoration-none" href="index.html">
+          <!-- 電腦版 -->
+          <a class="h1 text-decoration-none text-body-emphasis text-center d-none d-md-block" href="index.html">
             金融市場技術分析介紹及教學
           </a>
+          <!-- 手機版 -->
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="navbar-toggler collapsed d-md-none" type="button" ref="navbarToggler"
+              data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="h3 text-decoration-none text-body-emphasis text-center d-block d-md-none" href="index.html">
+              金融市場技術分析介紹及教學
+            </a>
+          </div>
         </div>
       </div>
     </header>
 
-    <div class="navbar-nav py-2 mb-3 border-bottom h3">
-      <nav class="nav nav-underline justify-content-center">
-        <a class="nav-item nav-link link-body-emphasis mx-3 active" href="indicators.html">指標</a>
-        <a class="nav-item nav-link link-body-emphasis mx-3" href="patternology.html">型態</a>
-        <a class="nav-item nav-link link-body-emphasis mx-3" href="volume.html">成交量</a>
-        <a class="nav-item nav-link link-body-emphasis mx-3" href="resistence_and_support.html">支撐&壓力</a>
-        <a class="nav-item nav-link link-body-emphasis mx-3" href="trendline.html">趨勢線</a>
-      </nav>
-    </div>
+    <nav class="navbar navbar-expand-md py-2 navbar-mb-md navbar-tb-border-md">
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav" ref="navbarNav">
+        <ul class="navbar-nav nav-underline h4">
+            <a class="nav-item nav-link link-body-emphasis mx-3 active" href="indicators.html">指標</a>
+            <a class="nav-item nav-link link-body-emphasis mx-3" href="patternology.html">型態</a>
+            <a class="nav-item nav-link link-body-emphasis mx-3" href="volume.html">成交量</a>
+            <a class="nav-item nav-link link-body-emphasis mx-3" href="resistence_and_support.html">支撐&壓力</a>
+            <a class="nav-item nav-link link-body-emphasis mx-3" href="trendline.html">趨勢線</a>
+        </ul>
+      </div>
+    </nav>
   </div>
 
   <main class="container">
     <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
-      <div class="col-lg-6 px-0">
-        <h1 class="display-4 fst-italic">指標</h1>
-        <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently
-          about what’s most interesting in this post’s contents.</p>
-        <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continue reading...</a></p>
+      <div class="col px-0">
+        <div class="h3">技術分析</div>
+        <p>在技術分析中，我們所使用的線圖、指標，統稱為技術指標。</p>
+        <p>
+          所謂的指標(Indicator)，就是能顯示出過去價格、市場情緒、短期趨勢的數值，作為投資時的額外參考資訊，技術分析投資者透過使用這些指標工具，讓投資分析更有依據。技術分析就是靠著過去的交易蒐集到的統計資訊，藉此評估投資標的的走向趨勢來做交易。
+        </p>
+        <p>
+          與基本分析派的差別在於，技術分析派更專注於價格走勢、交易信用或其他分析圖表工具，才會評估初一項標的的優劣勢。
+        </p>
+        <p class="my-0">
+          技術分析指標則是那些側重於歷史交易數據（如價格、數量），而非公司業務基本面的指標（如毛利、利潤）
+        </p>
+        <p>
+          事實上，技術分析可用於任何具有歷史交易數據的投資標的，因此股票、期貨、大宗商品、貨幣等金融產品，都能夠使用。
+        </p>
+        <p>
+          雖然多數人的直覺技術分析都是用在股票投資上，但其實大宗商品、外匯市場等，其實技術分析的使用更為普遍，一方面是這些金融商品更重視短線走勢，二方面是短期內往往缺乏其他有效參考資料，因此僅能透過過去價格、成交量狀況變化來做出判斷。
+        </p>
+        <p class="my-0">
+          
+        </p>
+        <p class="my-0">
+          不過技術分析也不一定只能用在短期，喜歡長期投資的投資人也可以使用技術分析指標來選擇入場、出場的時機點。
+        </p>
+        <p>使用技術指標的優點：作為短期內參考資訊、只要有價格的商品都適用。</p>
+        <p>使用技術指標的缺點：技術指標的模式特性，過去重複的模式不代表未來每次都一定會同樣變動。用起來較欠缺信心，對判斷也缺乏充足的證據，因此通常需要搭配其他資訊一起做判斷。</p>
+        <p class="text-end pt-3">
+          資料來源:市場先生
+        </p>
       </div>
     </div>
 
     <div class="row mb-2">
-      <div class="col-md-6">
+      <div class="col">
         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
           <div class="col p-4 d-flex flex-column position-static">
             <strong class="d-inline-block mb-2 text-primary-emphasis">World</strong>
@@ -226,7 +264,9 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6">
+    </div>
+    <div class="row mb-2">
+      <div class="col">
         <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
           <div class="col p-4 d-flex flex-column position-static">
             <strong class="d-inline-block mb-2 text-success-emphasis">Design</strong>
@@ -248,246 +288,6 @@
               <rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef"
                 dy=".3em">Thumbnail</text>
             </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row g-5">
-      <div class="col-md-8">
-        <h3 class="pb-4 mb-4 fst-italic border-bottom">
-          From the Firehose
-        </h3>
-
-        <article class="blog-post">
-          <h2 class="display-5 link-body-emphasis mb-1">Sample blog post</h2>
-          <p class="blog-post-meta">January 1, 2021 by <a href="#">Mark</a></p>
-
-          <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic
-            typography, lists, tables, images, code, and more are all supported as expected.</p>
-          <hr>
-          <p>This is some additional paragraph placeholder content. It has been written to fill the available space and
-            show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the
-            demonstration flowing, so be on the lookout for this exact same string of text.</p>
-          <h2>Blockquotes</h2>
-          <p>This is an example blockquote in action:</p>
-          <blockquote class="blockquote">
-            <p>Quoted text goes here.</p>
-          </blockquote>
-          <p>This is some additional paragraph placeholder content. It has been written to fill the available space and
-            show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the
-            demonstration flowing, so be on the lookout for this exact same string of text.</p>
-          <h3>Example lists</h3>
-          <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly
-            repetitive body text used throughout. This is an example unordered list:</p>
-          <ul>
-            <li>First list item</li>
-            <li>Second list item with a longer description</li>
-            <li>Third list item to close it out</li>
-          </ul>
-          <p>And this is an ordered list:</p>
-          <ol>
-            <li>First list item</li>
-            <li>Second list item with a longer description</li>
-            <li>Third list item to close it out</li>
-          </ol>
-          <p>And this is a definition list:</p>
-          <dl>
-            <dt>HyperText Markup Language (HTML)</dt>
-            <dd>The language used to describe and define the content of a Web page</dd>
-            <dt>Cascading Style Sheets (CSS)</dt>
-            <dd>Used to describe the appearance of Web content</dd>
-            <dt>JavaScript (JS)</dt>
-            <dd>The programming language used to build advanced Web sites and applications</dd>
-          </dl>
-          <h2>Inline HTML elements</h2>
-          <p>HTML defines a long list of available inline tags, a complete list of which can be found on the <a
-              href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Developer Network</a>.</p>
-          <ul>
-            <li><strong>To bold text</strong>, use <code
-                class="language-plaintext highlighter-rouge">&lt;strong&gt;</code>.</li>
-            <li><em>To italicize text</em>, use <code class="language-plaintext highlighter-rouge">&lt;em&gt;</code>.
-            </li>
-            <li>Abbreviations, like <abbr title="HyperText Markup Language">HTML</abbr> should use <code
-                class="language-plaintext highlighter-rouge">&lt;abbr&gt;</code>, with an optional <code
-                class="language-plaintext highlighter-rouge">title</code> attribute for the full phrase.</li>
-            <li>Citations, like <cite>— Mark Otto</cite>, should use <code
-                class="language-plaintext highlighter-rouge">&lt;cite&gt;</code>.</li>
-            <li><del>Deleted</del> text should use <code class="language-plaintext highlighter-rouge">&lt;del&gt;</code>
-              and <ins>inserted</ins> text should use <code
-                class="language-plaintext highlighter-rouge">&lt;ins&gt;</code>.</li>
-            <li>Superscript <sup>text</sup> uses <code class="language-plaintext highlighter-rouge">&lt;sup&gt;</code>
-              and subscript <sub>text</sub> uses <code class="language-plaintext highlighter-rouge">&lt;sub&gt;</code>.
-            </li>
-          </ul>
-          <p>Most of these elements are styled by browsers with few modifications on our part.</p>
-          <h2>Heading</h2>
-          <p>This is some additional paragraph placeholder content. It has been written to fill the available space and
-            show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the
-            demonstration flowing, so be on the lookout for this exact same string of text.</p>
-          <h3>Sub-heading</h3>
-          <p>This is some additional paragraph placeholder content. It has been written to fill the available space and
-            show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the
-            demonstration flowing, so be on the lookout for this exact same string of text.</p>
-          <pre><code>Example code block</code></pre>
-          <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly
-            repetitive body text used throughout.</p>
-        </article>
-
-        <article class="blog-post">
-          <h2 class="display-5 link-body-emphasis mb-1">Another blog post</h2>
-          <p class="blog-post-meta">December 23, 2020 by <a href="#">Jacob</a></p>
-
-          <p>This is some additional paragraph placeholder content. It has been written to fill the available space and
-            show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the
-            demonstration flowing, so be on the lookout for this exact same string of text.</p>
-          <blockquote>
-            <p>Longer quote goes here, maybe with some <strong>emphasized text</strong> in the middle of it.</p>
-          </blockquote>
-          <p>This is some additional paragraph placeholder content. It has been written to fill the available space and
-            show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the
-            demonstration flowing, so be on the lookout for this exact same string of text.</p>
-          <h3>Example table</h3>
-          <p>And don't forget about tables in these posts:</p>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Upvotes</th>
-                <th>Downvotes</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Alice</td>
-                <td>10</td>
-                <td>11</td>
-              </tr>
-              <tr>
-                <td>Bob</td>
-                <td>4</td>
-                <td>3</td>
-              </tr>
-              <tr>
-                <td>Charlie</td>
-                <td>7</td>
-                <td>9</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td>Totals</td>
-                <td>21</td>
-                <td>23</td>
-              </tr>
-            </tfoot>
-          </table>
-
-          <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly
-            repetitive body text used throughout.</p>
-        </article>
-
-        <article class="blog-post">
-          <h2 class="display-5 link-body-emphasis mb-1">New feature</h2>
-          <p class="blog-post-meta">December 14, 2020 by <a href="#">Chris</a></p>
-
-          <p>This is some additional paragraph placeholder content. It has been written to fill the available space and
-            show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the
-            demonstration flowing, so be on the lookout for this exact same string of text.</p>
-          <ul>
-            <li>First list item</li>
-            <li>Second list item with a longer description</li>
-            <li>Third list item to close it out</li>
-          </ul>
-          <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly
-            repetitive body text used throughout.</p>
-        </article>
-
-        <nav class="blog-pagination" aria-label="Pagination">
-          <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
-          <a class="btn btn-outline-secondary rounded-pill disabled">Newer</a>
-        </nav>
-
-      </div>
-
-      <div class="col-md-4">
-        <div class="position-sticky" style="top: 2rem;">
-          <div class="p-4 mb-3 bg-body-tertiary rounded">
-            <h4 class="fst-italic">About</h4>
-            <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers,
-              content, or something else entirely. Totally up to you.</p>
-          </div>
-
-          <div>
-            <h4 class="fst-italic">Recent posts</h4>
-            <ul class="list-unstyled">
-              <li>
-                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                  href="#">
-                  <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <rect width="100%" height="100%" fill="#777" />
-                  </svg>
-                  <div class="col-lg-8">
-                    <h6 class="mb-0">Example blog post title</h6>
-                    <small class="text-body-secondary">January 15, 2023</small>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                  href="#">
-                  <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <rect width="100%" height="100%" fill="#777" />
-                  </svg>
-                  <div class="col-lg-8">
-                    <h6 class="mb-0">This is another blog post title</h6>
-                    <small class="text-body-secondary">January 14, 2023</small>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                  href="#">
-                  <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <rect width="100%" height="100%" fill="#777" />
-                  </svg>
-                  <div class="col-lg-8">
-                    <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
-                    <small class="text-body-secondary">January 13, 2023</small>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="p-4">
-            <h4 class="fst-italic">Archives</h4>
-            <ol class="list-unstyled mb-0">
-              <li><a href="#">March 2021</a></li>
-              <li><a href="#">February 2021</a></li>
-              <li><a href="#">January 2021</a></li>
-              <li><a href="#">December 2020</a></li>
-              <li><a href="#">November 2020</a></li>
-              <li><a href="#">October 2020</a></li>
-              <li><a href="#">September 2020</a></li>
-              <li><a href="#">August 2020</a></li>
-              <li><a href="#">July 2020</a></li>
-              <li><a href="#">June 2020</a></li>
-              <li><a href="#">May 2020</a></li>
-              <li><a href="#">April 2020</a></li>
-            </ol>
-          </div>
-
-          <div class="p-4">
-            <h4 class="fst-italic">Elsewhere</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Facebook</a></li>
-            </ol>
           </div>
         </div>
       </div>
