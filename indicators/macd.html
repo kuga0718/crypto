@@ -1,1 +1,323 @@
-MACD
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+  <script src="color-modes.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kuga's Technical Analysis instruction</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .rounded-table {
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .rounded-table th,
+    .rounded-table td {
+      border-top: none;
+    }
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .bi-nav-icon {
+      vertical-align: 0.2em;
+      fill: currentColor;
+    }
+
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="../blog.css" rel="stylesheet">
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path
+        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path
+        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+      <path
+        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path
+        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+    </symbol>
+  </svg>
+
+  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+      aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+      <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+        <use href="#circle-half"></use>
+      </svg>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+            <use href="#sun-fill"></use>
+          </svg>
+          Light
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+            <use href="#moon-stars-fill"></use>
+          </svg>
+          Dark
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="chevron-left" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+    </symbol>
+    <symbol id="more" viewBox="0 0 16 16">
+      <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+      <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+    </symbol>
+  </svg>
+
+  <div class="container">
+    <header class="">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col text-center my-3">
+          <!-- 電腦版 -->
+          <a class="h1 text-decoration-none text-body-emphasis text-center d-none d-md-block" href="../index.html">
+            金融市場技術分析介紹及教學
+          </a>
+          <!-- 手機版 -->
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="navbar-toggler collapsed d-md-none" type="button" ref="navbarToggler"
+              data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <svg class="bi-nav-icon" width="2em" height="2em">
+                <use href="#more"></use>
+              </svg>
+            </button>
+            <a class="h3 me-2 text-decoration-none text-body-emphasis text-center d-block d-md-none" href="../index.html">
+              金融市場技術分析介紹及教學
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="navbar navbar-expand-md py-2 navbar-mb-md navbar-tb-border-md">
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav" ref="navbarNav">
+        <ul class="navbar-nav nav-underline h4">
+            <a class="nav-item nav-link link-body-emphasis mx-3" href="../indicators.html">指標</a>
+            <a class="nav-item nav-link link-body-emphasis mx-3" href="../patternology.html">型態</a>
+            <a class="nav-item nav-link link-body-emphasis mx-3" href="../volume.html">成交量</a>
+            <a class="nav-item nav-link link-body-emphasis mx-3" href="../resistence_and_support.html">支撐&壓力</a>
+            <a class="nav-item nav-link link-body-emphasis mx-3" href="../trendline.html">趨勢線</a>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <main class="container">
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary d-flex justify-content-center">
+      <div class="col-lg-10 px-0">
+        <div class="h3">MACD</div>
+        <div>MACD 指標中文是平滑異同移動平均線，亦稱作MACD線，由美國知名投資專家傑拉德·阿佩爾於1979年所發明。由於其操作簡單，發出的信號相對可靠，現已成為市場中最常使用的技術指標之一。</div>
+        <div class="my-3">MACD是在移動平均線的理論基礎上建立的技術指標，它透過研究長周期均線和短周期均線的差值的移動平均值來體現市場的動能。</div>
+        <div class="h5 mt-3">
+          信號線是DIF快線差離值的指數移動平均:
+        </div>
+        <div>
+          當其數值為正數時，表示短期平均價格大於長期平均價格，也就意味著市場行情處於上升中；
+        </div>
+        <div>
+          當信號線值為負數時，表示短期平均價格低於長期平均價格，意味著市場行情處於下跌中。
+        </div>
+        <div>
+          因此當信號線由零軸下方向上突破零軸時，是買進的信號，反之則是賣出的信號。
+        </div>
+
+        <div class="h5 mt-3">
+          柱狀圖是DIF快線差離值與差離值的指數移動平均值的差，同樣的：
+        </div>
+        <div>
+          柱狀圖為正數時代表短期的平均價格大於長期的平均價格，市場處於上升中；
+        </div>
+        <div>
+          當柱狀圖為負數時代表短期的平均價格小於長期的平均價格，市場處於下跌中。
+        </div>
+        <div>
+          當柱狀圖由零軸下方向上突破零軸時，是買進的信號，反之則是賣出的信號。
+        </div>
+
+        <div class="d-lg-flex flex-lg-row justify-content-center">
+          <div class="col-12 col-lg-6 p-2">
+            <div class="image-zoom">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal1">
+                <img src="../resource/macd.jpg" class="img-fluid" alt="Image 1">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="my-3">
+          由於單線MACD指標中只有一條信號線和柱狀圖，和其它指標不同，判斷MACD金叉和死叉時，是從柱狀圖和信號線的相對位置來確認。
+        </div>
+
+        <div>
+          根據柱狀圖和信號線是處於零軸上方還是下方，MACD金叉和死叉分為四種不同情況：
+        </div>
+        <ul class="list-group list-group-flush mt-1 mb-3">
+          <li class="list-group-item">
+            零軸上金叉－柱狀圖和信號線都運行在零軸上方，柱狀圖的值不斷遞增並且大於信號線，是買入的信號；
+          </li>
+          <li class="list-group-item">
+            零軸上死叉－柱狀圖和信號線都運行在零軸上方，柱狀圖的值不斷遞減並且小於信號線，是賣出的信號，此賣出信號比零軸下死叉弱；
+          </li>
+          <li class="list-group-item">
+            零軸下死叉－柱狀圖和信號線都運行在零軸下方，柱狀圖的值不斷遞減並且小於信號線，是賣出的信號；
+          </li>
+          <li class="list-group-item">
+            零軸下金叉－柱狀圖和信號線都運行在零軸下方，柱狀圖的值不斷遞增並且大於信號線，是買入的信號，此買進信號比零軸上金叉弱。
+          </li>
+        </ul>
+
+        <div class="mt-3">
+          MACD背離是指在市場行情價格不斷創新高或新低時，MACD柱狀圖並沒有跟隨不斷創新高或新低，意味著行情將可能出現反轉。
+        </div>
+        <div class="mb-3">
+          背離的本質可以理解成推動現有價格趨勢的力量在不斷減少，最後當推動力量徹底消失時原有價格趨勢也消失。
+        </div>
+        <div>
+          背離通常是因為股價在短期內快速上漲或是下跌，讓指標來不及反應價格的趨勢。
+        </div>
+        <div>
+          如果股價創新低，但快線卻上升，稱為「多頭背離」，一般認為是買進訊號。
+        </div>
+        <div class="mb-3">
+          如果股價創新高，但快線卻下降，稱為「空頭背離」，一般認為是賣出訊號。
+        </div>
+
+        <div>
+          根據柱狀圖和信號線是處於零軸上方還是下方，MACD金叉和死叉分為四種不同情況：
+        </div>
+        <ul class="list-group list-group-flush mt-1">
+          <li class="list-group-item">
+            高檔背離 － 也稱為頂背離，指市場價格創出了新高，但MACD的柱狀圖卻沒有跟隨創出新的高點，這是賣出的信號；
+          </li>
+          <li class="list-group-item">
+            低檔背離 － 也稱為底背離，指市場價格創出了新低，但MACD的柱狀圖卻沒有跟隨創出新的低點，這是買入的信號；
+          </li>
+        </ul>
+
+        <div class="mt-2">
+          <a href="../indicators.html" class="icon-link gap-1 icon-link-hover">
+            <svg class="bi">
+              <use xlink:href="#chevron-left" />
+            </svg>
+            返回
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 圖1 -->
+    <div class="modal fade" id="imageModal1" tabindex="-1" aria-labelledby="imageModalLabel1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <img src="../resource/macd.jpg" class="img-fluid" alt="Image 1">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+    © 2023 Kuga
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
