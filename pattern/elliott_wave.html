@@ -1,1 +1,385 @@
-艾略特波浪
+<!doctype html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+  <script src="../color-modes.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kuga's Technical Analysis instruction</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .rounded-table {
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .rounded-table th,
+    .rounded-table td {
+      border-top: none;
+    }
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .bi-nav-icon {
+      vertical-align: 0.2em;
+      fill: currentColor;
+    }
+
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="../blog.css" rel="stylesheet">
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path
+        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path
+        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+      <path
+        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path
+        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+    </symbol>
+  </svg>
+
+  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+      aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+      <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+        <use href="#circle-half"></use>
+      </svg>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+            <use href="#sun-fill"></use>
+          </svg>
+          Light
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+            <use href="#moon-stars-fill"></use>
+          </svg>
+          Dark
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="chevron-left" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+    </symbol>
+    <symbol id="more" viewBox="0 0 16 16">
+      <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+      <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
+    </symbol>
+  </svg>
+
+  <div class="container">
+    <header class="">
+      <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="col text-center my-3">
+          <!-- 電腦版 -->
+          <a class="h1 text-decoration-none text-body-emphasis text-center d-none d-md-block" href="../index.html">
+            金融市場技術分析介紹及教學
+          </a>
+          <!-- 手機版 -->
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="navbar-toggler collapsed d-md-none" type="button" ref="navbarToggler"
+              data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <svg class="bi-nav-icon" width="2em" height="2em">
+                <use href="#more"></use>
+              </svg>
+            </button>
+            <a class="h3 me-2 text-decoration-none text-body-emphasis text-center d-block d-md-none" href="../index.html">
+              金融市場技術分析介紹及教學
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="navbar navbar-expand-md py-2 navbar-mb-md navbar-tb-border-md">
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav" ref="navbarNav">
+        <ul class="navbar-nav nav-underline h4">
+            <a class="nav-item nav-link link-body-emphasis mx-3" href="../indicators.html">指標</a>
+            <a class="nav-item nav-link link-body-emphasis mx-3" href="../patternology.html">型態</a>
+            <a class="nav-item nav-link link-body-emphasis mx-3" href="../volume.html">成交量</a>
+            <a class="nav-item nav-link link-body-emphasis mx-3" href="../resistence_and_support.html">支撐&壓力</a>
+            <a class="nav-item nav-link link-body-emphasis mx-3" href="../trendline.html">趨勢線</a>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <main class="container">
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary d-flex justify-content-center">
+      <div class="col-lg-10 px-0">
+        <div class="h3">艾略特波浪</div>
+        <div class="mb-3">
+          波浪理論是美國證券分析家拉爾夫·納爾遜·艾略特（R.N.Elliott）利用道瓊斯工業平均指數（Dow Jones Industrial Average，DJIA）作為研究工具而創建的一種理論。
+        </div>
+        <div class="mb-3">
+          <div>
+            艾略特波浪理論（Elliott Wave Theory）是股票技術分析的一種理論。
+          </div>
+          <div>
+            認為市場走勢不斷重覆一種模式，每一周期由5個上升浪和3個下跌浪組成。
+          </div>
+          <div>
+            艾略特波浪理論將不同規模的趨勢分成九大類，最長的超大循環波(grand supercycle) 是橫跨200年的超大型周期，而次微波(subminuette)則只覆蓋數小時之內的走勢。
+            但無論趨勢的規模如何，每一周期由8個波浪構成這一點是不變的。
+          </div>
+        </div>
+        <div class="h4">
+          波浪理論的特性
+        </div>
+
+        <table class="table rounded-table mb-1">
+          <tbody>
+            <tr>
+              <td class="align-middle fit">第一浪</td>
+              <td class="col">大約半數的第一浪屬於營造底部形態的一部分。跟隨這類第一浪出現的第二浪的調整幅度，通常較大；其余一半第一浪則在大型調整形態之後出現，這類第一浪升幅較為可觀。</td>
+            </tr>
+            <tr>
+              <td class="align-middle fit">第二浪</td>
+              <td class="col">有時調整幅度頗大，令市場人士誤以為熊市尚未完結；成交量逐漸縮小，波幅較細，反映拋售壓力逐漸衰竭；出現傳統圖表中的轉向形態，比如頭肩底、雙底等。</td>
+            </tr>
+            <tr>
+              <td class="align-middle fit">第三浪</td>
+              <td class="col">通常屬於最具爆炸性的波浪；運行時間及幅度經常屬於最長的一個波浪；大部分時間成為延伸浪；成交量大增；出現傳統型圖表的突破訊號，例如缺口跳升等。</td>
+            </tr>
+            <tr>
+              <td class="align-middle fit">第四浪</td>
+              <td class="col">經常以較為覆雜的形態出現，以三角形調整形態運行的機會亦甚多，通常在低一級的對上一個第四浪之範圍內完結，浪底不會低於第一浪的頂。</td>
+            </tr>
+            <tr>
+              <td class="align-middle fit">第五浪</td>
+              <td class="col">股市中第五浪升幅，一般較第三浪為小。在期貨市場，則出現相反情況，以第五浪成為延伸浪的機會較大；市場樂觀情緒高於一切。</td>
+            </tr>
+            <tr>
+              <td class="align-middle fit">A浪</td>
+              <td class="col">市場人士多數認為市勢仍未逆轉，只視為一個短暫的調整，平勢調整形態的A浪之後，B浪將會以向上的之字形形態出現，如果A浪以之字形形態運行，則B浪多數屬於平勢調整浪。</td>
+            </tr>
+            <tr>
+              <td class="align-middle fit">B浪</td>
+              <td class="col">升勢較為情緒化，出現傳統圖表的牛勢陷阱，市場人士誤以為上一個上升浪尚未完結，成交疏落。</td>
+            </tr>
+            <tr>
+              <td class="align-middle fit">C浪</td>
+              <td class="col">破壞力較強，與第三浪的特性甚為相似，全面性下跌。</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="d-lg-flex flex-lg-row justify-content-center mb-5">
+          <div class="col-12 col-lg-6 p-2">
+            <div class="image-zoom">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal1">
+                <img src="../resource/elliott_wave1.jpg" class="img-fluid" alt="Image 1">
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mb-1">
+          波浪的形態，是波浪理論的立論基礎。因此，數浪正確與否，至為重要。數浪的基本規則只有兩條。如果堅守不移，可說已經成功了一半。
+        </div>
+        <div class="alert alert-primary mb-3" role="alert">
+          <strong>
+            第一：第三個浪（推動浪）永遠不可以是第一至第五浪中最短的一個浪。通常來說，第三個浪是最具爆炸性的，經常成為最長的一個浪。<br>
+            第二：第四個浪的浪底，不可以低於第一個浪的浪頂。
+          </strong>
+        </div>
+        
+        <div class="mb-1">
+        以下的例子是以BTCUSD (bitstamp)天圖圖表做解釋
+        </div>
+
+        <div class="d-lg-flex flex-lg-row justify-content-center mb-3">
+          <div class="col-12 col-lg-6 p-2">
+            <div class="image-zoom">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal2">
+                <img src="../resource/elliott_wave2.jpg" class="img-fluid" alt="Image 2">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          為了方便解釋 我會用上升趨勢作為介紹基礎。不過波浪理論也同樣可以用在下跌趨勢。<br>
+          第一浪的開始，意味著之前的盤整趨勢或者下跌趨勢已經完畢。同時可以配合DL趨勢過河拆橋之後來做判斷基準。<br>
+          當第一浪開始運行的時候，起初是不容易辨認。但第一浪一旦走完全程，便會構成可靠的訊號。<br>
+        </div>
+        <div class="mb-3">
+          比如可以使用FIBO來測量第一浪的回調可以到 FIBO 0.5區間也就變成了第二浪接著出現，但是第二浪調整的幅度不應該大於第一浪運行的長度。只要第二浪低點不低於第一浪的起點就可以辨認為第二浪.
+        </div>
+        <div class="mb-3">
+          之後繼續上漲形成第三浪也就是最具爆炸力的。在推動浪當中第三浪力量最強。在正常的情況下大部分上升力度都在第三浪的行情中出現。<br>
+          如果根據前面數浪規則兩條不可違反的天條，第三浪永遠不可以是最短的一個推動浪 (第三浪必須長於第一浪或第五浪)。
+        </div>
+        <div class="mb-3">
+          第四浪也就是跟第二浪一樣來個回調，同樣可以使用FIBO來測量回調的幅度。從圖中可以看到FIBO一樣停留在了0.5的區間。<br>
+          第四浪里有個條規就是<strong>第四浪的底不可以低於第一浪的頂。</strong><br>
+          圖中可以看到第四浪是完全沒有動到第一浪的頂部價位的。<br><br>
+          另外的一些情況可以是在第四浪出現三角形形態比如ascending triangle上升三角形、descending triangle下跌三角形、Symmetrical Triangle 對稱三角形及Broadening Formation喇叭三角形。
+        </div>
+        <div class="mb-3">
+          最後價錢繼續上漲也就形成了第五浪。通常第五浪的價位上升相對動力減弱自然構成背離的現象或者圓弧形態也就是準備開始看跌趨勢。<br>
+          不過跟著圖表內的第五浪出現了延展浪。延展浪的力度通常不會有力過第五浪的長度，隨後趨勢開始轉弱，然後DL過河拆橋進入下跌趨勢配合ABC下跌浪的環節。
+        </div>
+        <div class="d-lg-flex flex-lg-row justify-content-center mb-3">
+          <div class="col-12 col-lg-6 p-2">
+            <div class="image-zoom">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#imageModal3">
+                <img src="../resource/elliott_wave3.jpg" class="img-fluid" alt="Image 3">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          A浪下跌正常的情況下向下調整力度較弱或者說調整的方式可能以平坦形態出現。
+        </div>
+        <div class="mb-3">
+          B浪上升回調可能收回A浪絕大部分的失地，可以看到利用FIBO來測量B浪的回調點位趨近於FIBO 0.66-0.618的區間。<br>
+          最後就是C浪也可以算是調整浪的終點。C浪可以是跟A浪下跌的低點成為平行 (有可能出現所謂的雙底W低的意思) 或者下跌的比A浪下跌的終點來的低，就如圖中所看到的一樣。
+        </div>
+
+        <div class="mt-2">
+          <a href="../patternology.html" class="icon-link gap-1 icon-link-hover">
+            <svg class="bi">
+              <use xlink:href="#chevron-left" />
+            </svg>
+            返回
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 圖1 -->
+    <div class="modal fade" id="imageModal1" tabindex="-1" aria-labelledby="imageModalLabel1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <img src="../resource/elliott_wave1.jpg" class="img-fluid" alt="Image 1">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 圖2 -->
+    <div class="modal fade" id="imageModal2" tabindex="-1" aria-labelledby="imageModalLabel2" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <img src="../resource/elliott_wave2.jpg" class="img-fluid" alt="Image 2">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 圖3 -->
+    <div class="modal fade" id="imageModal3" tabindex="-1" aria-labelledby="imageModalLabel3" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <img src="../resource/elliott_wave3.jpg" class="img-fluid" alt="Image 3">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+    © 2023 Kuga
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
